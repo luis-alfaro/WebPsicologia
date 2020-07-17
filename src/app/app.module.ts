@@ -1,31 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { Routes, RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { CoreModule } from './core/core.module';
-import { PublicModule } from './modules/public/public.module';
-//import { LoginComponent } from './core/login/login.component';
-
-const routes: Routes = [
-  {
-    path: 'public/*',
-    loadChildren: './modules/home.module#HomeModule'
-  },
-  {
-    path: '**',
-    redirectTo: ''
-  }
-];
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  imports:      [ 
-    BrowserModule,
-    CoreModule,
-    PublicModule,
-    RouterModule.forRoot(routes, {useHash: true})
-  ],
-  declarations: [ AppComponent ],
-  bootstrap:    [ AppComponent ]
+  imports: [ BrowserModule, AppRoutingModule ],
+  declarations: [ AppComponent, LoginComponent ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

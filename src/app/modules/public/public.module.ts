@@ -1,12 +1,11 @@
-//import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { PublicRoutingModule } from './public-routing.module';
+
 import { BienvenidaComponent } from './bienvenida/bienvenida.component';
-//import { AppModule } from '../../app.module';
-import { PublicRouting } from './public.routing';
 import { ContactanosComponent } from './contactanos/contactanos.component';
 
 @NgModule({
-  imports: [ PublicRouting ],
+  imports: [ PublicRoutingModule ],
   declarations: [ BienvenidaComponent, ContactanosComponent ]
 })
 export class PublicModule { }
