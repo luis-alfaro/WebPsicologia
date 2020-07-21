@@ -10,7 +10,7 @@ const routes : Routes = [
       path: '',
       component: PublicComponent,
       children: [
-        { path: 'home', component: BienvenidaComponent },
+        { path: '', component: BienvenidaComponent, pathMatch: 'full' },
         { path: 'contactanos', component: ContactanosComponent }
       ]
     }    
