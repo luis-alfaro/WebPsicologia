@@ -1,23 +1,45 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CoreModule } from './core/core.module';
-import { LoginComponent } from './route-components/login/login.component';
+
+import { LayoutPublicComponent } from './route-components/layout-public/layout-public.component';
+import { LayoutUserComponent } from './route-components/layout-user/layout-user.component';
 import { NotFoundComponent } from './route-components/not-found/not-found.component';
 
 const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'bienvenida' },
   {
-    path: 'public',
-    loadChildren: () => import('./modules/public/public.module').then(m => m.PublicModule)
+    path: 'login',
+    loadChildren: () => import('./modules/login/login.module').then(m => m.LoginModule)
   },
   {
-    path: 'paciente',
-    loadChildren: () => import('./modules/paciente/paciente.module').then(m => m.PacienteModule)
+    path: '',
+    component: LayoutPublicComponent,
+    children: [
+      {
+        path: 'bienvenida',
+        loadChildren: () => import('./modules/bienvenida/bienvenida.module').then(m => m.BienvenidaModule)
+      },
+      {
+        path: 'contactanos',
+        loadChildren: () => import('./modules/contactanos/contactanos.module').then(m => m.ContactanosModule)
+      }
+    ]
   },
   {
-    path: 'psicologo',
-    loadChildren: () => import('./modules/psicologo/psicologo.module').then(m => m.PacienteModule)
+    path: '',
+    component: LayoutUserComponent,
+    children: [
+      {
+        path: 'paciente',
+        loadChildren: () => import('./modules/paciente/paciente.module').then(m => m.PacienteModule)
+      },
+      {
+        path: 'psicologo',
+        loadChildren: () => import('./modules/psicologo/psicologo.module').then(m => m.PsicologoModule)
+      }
+    ]
   },
-  { path: '', component: LoginComponent, pathMatch: 'full' },
   { path: '**', component: NotFoundComponent },/*,
   {
     path: 'error',
