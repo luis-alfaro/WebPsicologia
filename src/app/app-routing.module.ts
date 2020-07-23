@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { CoreModule } from './core/core.module';
 
 import { LayoutPublicComponent } from './route-components/layout-public/layout-public.component';
@@ -22,7 +22,8 @@ const routes: Routes = [
       },
       {
         path: 'contactanos',
-        loadChildren: () => import('./modules/contactanos/contactanos.module').then(m => m.ContactanosModule)
+        loadChildren: () => import('./modules/contactanos/contactanos.module').then(m => m.ContactanosModule),
+        data: {preload:true}
       }
     ]
   },
@@ -32,11 +33,13 @@ const routes: Routes = [
     children: [
       {
         path: 'paciente',
-        loadChildren: () => import('./modules/paciente/paciente.module').then(m => m.PacienteModule)
+        loadChildren: () => import('./modules/paciente/paciente.module').then(m => m.PacienteModule),
+        data: {preload:true}
       },
       {
         path: 'psicologo',
-        loadChildren: () => import('./modules/psicologo/psicologo.module').then(m => m.PsicologoModule)
+        loadChildren: () => import('./modules/psicologo/psicologo.module').then(m => m.PsicologoModule),
+        data: {preload:true}
       }
     ]
   },
@@ -49,7 +52,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes, {useHash: true}) ],
+  imports: [ RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules, useHash: true }) ],
   exports: [ RouterModule ]
 })
 export class AppRoutingModule { }
