@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
-import { PacienteService } from './paciente.service';
+import { PacienteService } from './servicios/paciente.service';
 
 @NgModule({
-  imports: [ ],
   providers: [PacienteService]
 })
 export class CoreModule { }

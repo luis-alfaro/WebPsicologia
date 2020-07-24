@@ -7,4 +7,4 @@ import { BienvenidaComponent } from './bienvenida/bienvenida.component';
   imports: [ BienvenidaRoutingModule ],
   declarations: [ BienvenidaComponent ]
 })
-export class BienvenidaModule { constructor(){console.log('BienvenidaModule')} }
+export class BienvenidaModule { }
