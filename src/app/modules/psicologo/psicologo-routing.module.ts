@@ -5,16 +5,8 @@ import { PsicologoListComponent } from './psicologo-list/psicologo-list.componen
 import { PsicologoDetailComponent } from './psicologo-detail/psicologo-detail.component';
 
 const routes : Routes = [
-  /*{ 
-    path: '',
-    component: PublicComponent,
-    children: [
-      { path: '', component: BienvenidaComponent, pathMatch: 'full' },
-      { path: 'contactanos', component: ContactanosComponent }
-    ]
-  },*/
   { path: '', component: PsicologoListComponent, pathMatch: 'full' },
-  { path: 'detail', component: PsicologoDetailComponent }
+  { path: ':psicologoId', component: PsicologoDetailComponent }
 ];
 
 @NgModule({
