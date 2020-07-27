@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PacienteService } from '../../../core/servicios/paciente.service';
+import { PacienteService } from '../../../core/services/paciente.service';
+
+import { Paciente } from '../../../shared/models/paciente';
 
 @Component({
   selector: 'app-paciente-list',
@@ -7,9 +9,12 @@ import { PacienteService } from '../../../core/servicios/paciente.service';
   styleUrls: ['./paciente-list.component.css']
 })
 export class PacienteListComponent implements OnInit {
+  listPaciente: Paciente[];
+
   constructor(private pacienteService:PacienteService) { }
 
-  ngOnInit() {
-    console.log(this.pacienteService.getList());
+  ngOnInit() {    
+    this.pacienteService.getAll()
+      .subscribe(listPaciente => this.listPaciente = listPaciente);
   }
 }

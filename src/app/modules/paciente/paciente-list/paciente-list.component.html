@@ -1,1 +1,62 @@
-<p>paciente-list.component works!</p>
+<h2>Lista de Pacientes</h2>
+<table class="pacientes">
+  <thead>
+    <tr>
+      <td>Id</td>
+      <td>nombres</td>
+      <td>apellidos</td>
+      <td>telefono</td>
+      <td>celular</td>
+      <td>email</td>
+      <td>descripcion</td>
+      <td>psicologoId</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let paciente of listPaciente'>
+      <td>{{paciente._id}}</td>
+      <td>{{paciente.nombres}}</td>
+      <td>{{paciente.apellidos}}</td>
+      <td>{{paciente.telefono}}</td>
+      <td>{{paciente.celular}}</td>
+      <td>{{paciente.email}}</td>
+      <td>{{paciente.descripcion}}</td>
+      <td>{{paciente.psicologoId}}</td>
+    </tr>
+  </tbody>
+</table>
+<ul class="pacientes">
+  <li>
+    Id
+    <span class="badge">nombres</span>
+    apellidos
+    <span class="badge">telefono</span>
+    celular
+    <span class="badge">email</span>
+    descripcion
+    <span class="badge">psicologoId</span>
+  </li>
+  <!--<li *ngFor="let hero of heroes"
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)">-->
+  <li *ngFor='let paciente of listPaciente'>
+    <span class="badge">{{paciente._id}}</span>
+    {{paciente.nombres}}
+    <span class="badge">{{paciente.apellidos}}</span>
+    {{paciente.telefono}}
+    <span class="badge">{{paciente.celular}}</span>
+    {{paciente.email}}
+    <span class="badge">{{paciente.descripcion}}</span>
+    {{paciente.psicologoId}}
+  </li>
+</ul>
+
+<!--<div *ngIf="selectedHero">
+  <h2>{{selectedHero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedHero.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedHero.name" placeholder="name"/>
+    </label>
+  </div>
+</div>-->

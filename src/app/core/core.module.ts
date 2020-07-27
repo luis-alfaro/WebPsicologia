@@ -1,7 +1,9 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
-import { PacienteService } from './servicios/paciente.service';
+import { PacienteService } from './services/paciente.service';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
+  imports: [ SharedModule ],
   providers: [PacienteService]
 })
 export class CoreModule {
