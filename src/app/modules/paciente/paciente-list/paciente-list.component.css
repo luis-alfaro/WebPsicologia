@@ -2,24 +2,29 @@
   cursor: pointer;
   position: relative;
   left: 0;
-  background-color: #EEE;
   margin: .5em;
   padding: .3em 0;
   height: 1.6em;
   border-radius: 4px;
 }
-  .pacientes tr:nth-child(2n) { background-color: #EEE; }
-  .pacientes tr:nth-child(2n+1) { background-color: #777; }
-.pacientes tr:hover {
+  .pacientes thead {
+    background-color: #222;
+    color: #EEE
+  }
+  .pacientes tbody  tr:nth-child(3n) { background-color: #EEE; }
+  .pacientes tbody  tr:nth-child(3n+2) { background-color: #CCC; }
+  .pacientes tbody  tr:nth-child(3n+1) { background-color: #AAA; }
+
+.pacientes tbody tr:hover {
   color: #607D8B;
-  background-color: #DDD;
+  background-color: #777;
   left: .1em;
 }
-.pacientes tr.selected {
+.pacientes tbody tr.selected {
   background-color: #CFD8DC;
   color: white;
 }
-.pacientes tr.selected:hover {
+.pacientes tbody tr.selected:hover {
   background-color: #BBD8DC;
   color: white;
 }
