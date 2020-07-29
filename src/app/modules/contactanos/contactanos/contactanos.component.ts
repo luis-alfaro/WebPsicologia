@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Paciente } from '../../../shared/models/paciente';
+import { PacienteService } from '../../../core/services/paciente.service';
 
 @Component({
   selector: 'app-public-contactanos',
@@ -9,8 +11,13 @@ import { Paciente } from '../../../shared/models/paciente';
 export class ContactanosComponent implements OnInit {
   paciente: Paciente;
 
-  constructor() { }
+  constructor(private pacienteService: PacienteService) { }
 
   ngOnInit() {
+  }
+
+  onSave(): void {
+    this.pacienteService.create(this.pacienteService.next());
+    alert('paciente creado')
   }
 }

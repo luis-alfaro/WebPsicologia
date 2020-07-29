@@ -16,8 +16,8 @@
   .pacientes tbody  tr:nth-child(3n+1) { background-color: #AAA; }
 
 .pacientes tbody tr:hover {
-  color: #607D8B;
-  background-color: #777;
+  color: rgb(35, 32, 196);
+  background-color: #77c9d8;
   left: .1em;
 }
 .pacientes tbody tr.selected {
