@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { PsicologoListComponent } from './psicologo-list/psicologo-list.component';
-import { PsicologoDetailComponent } from './psicologo-detail/psicologo-detail.component';
+import { UsuarioListComponent } from './usuario-list/usuario-list.component';
+import { UsuarioDetailComponent } from './usuario-detail/usuario-detail.component';
 
 const routes : Routes = [
-  { path: '', component: PsicologoListComponent, pathMatch: 'full' },
-  { path: ':psicologoId', component: PsicologoDetailComponent }
+  { path: '', component: UsuarioListComponent, pathMatch: 'full' },
+  { path: ':usuarioId', component: UsuarioDetailComponent }
 ];
 
 @NgModule({
   imports: [ RouterModule.forChild(routes)],
   exports: [ RouterModule ]
 })
-export class PsicologoRoutingModule { }
+export class UsuarioRoutingModule { }

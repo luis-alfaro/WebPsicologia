@@ -32,6 +32,11 @@ const routes: Routes = [
     component: LayoutUserComponent,
     children: [
       {
+        path: 'usuario',
+        loadChildren: () => import('./modules/usuario/usuario.module').then(m => m.UsuarioModule),
+        data: {preload:true}
+      },
+      {
         path: 'paciente',
         loadChildren: () => import('./modules/paciente/paciente.module').then(m => m.PacienteModule),
         data: {preload:true}

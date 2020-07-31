@@ -1,7 +1,7 @@
 import { Paciente } from "../../shared/models/paciente";
 
 export const PACIENTE: Paciente = {
-  _id: "5efa7f4cb9515005b0bd5cc{id}",
+  _id: "{id}",
   nombres: "Nombres Paciente{id}",
   apellidos: "Apellidos Paciente{id}",
   telefono: "Telefono Paciente{id}",

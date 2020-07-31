@@ -1,3 +1,28 @@
-<p>
-usuario-list works!
-</p>
+<h2>Lista de Usuarios</h2>
+<table class="usuarios">
+  <thead>
+    <tr>
+      <td>Id</td>
+      <td>userName</td>
+      <td>password</td>
+      <td>rolId</td>
+      <td>nombres</td>
+      <td>apellidos</td>
+      <td>acciones</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let usuario of listUsuario'>
+      <td>{{usuario._id}}</td>
+      <td>{{usuario.userName}}</td>
+      <td>{{usuario.password}}</td>
+      <td>{{usuario.rolId}}</td>
+      <td>{{usuario.nombres}}</td>
+      <td>{{usuario.apellidos}}</td>
+      <td>
+        <a [routerLink]="['/usuario', usuario._id]">Ver</a>
+        <a (click)="onDelete(usuario._id)">Eliminar</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

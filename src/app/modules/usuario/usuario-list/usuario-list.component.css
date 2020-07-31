@@ -1,0 +1,30 @@
+.usuarios tr {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+  .usuarios thead {
+    background-color: #222;
+    color: #EEE
+  }
+  .usuarios tbody  tr:nth-child(3n) { background-color: #EEE; }
+  .usuarios tbody  tr:nth-child(3n+2) { background-color: #CCC; }
+  .usuarios tbody  tr:nth-child(3n+1) { background-color: #AAA; }
+
+.usuarios tbody tr:hover {
+  color: rgb(35, 32, 196);
+  background-color: #77c9d8;
+  left: .1em;
+}
+.usuarios tbody tr.selected {
+  background-color: #CFD8DC;
+  color: white;
+}
+.usuarios tbody tr.selected:hover {
+  background-color: #BBD8DC;
+  color: white;
+}

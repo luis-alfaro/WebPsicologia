@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 import { Paciente } from '../../shared/models/paciente';
-import { PACIENTES } from '../mocks/paciente.mock';
 import { PACIENTE } from '../mocks/paciente-template.mock';
 
 @Injectable()
