@@ -1,3 +1,10 @@
-<p>
-usuario-detail works!
-</p>
+<div *ngIf="usuario">
+  <h2>{{usuario.userName | uppercase}}</h2>
+  <div><span>id: </span>{{usuario._id}}</div>
+  <div>
+    <label>password: <input [(ngModel)]="usuario.password" placeholder="password"/></label>
+    <label>nombres: <input [(ngModel)]="usuario.nombres" placeholder="nombres"/></label>
+    <label>apellidos: <input [(ngModel)]="usuario.apellidos" placeholder="apellidos"/></label>
+  </div>
+  <button (click)="goBack()">go back</button>
+</div>

@@ -13,12 +13,23 @@ export class UsuarioListComponent implements OnInit {
 
   constructor(private usuarioService:UsuarioService) { }
 
-  ngOnInit() {    
+  ngOnInit() { this.getList(); }
+
+  getList(): void {    
     this.usuarioService.getAll()
       .subscribe(listUsuario => this.listUsuario = listUsuario);
   }
 
   onDelete(_id: string): void {
-    alert(`¿Desea eliminar usuario ${_id}?`);
+    if(confirm(`¿Desea eliminar usuario ${_id}?`)) {
+      this.usuarioService.delete(_id)
+        .subscribe(resp => {
+          if(resp){            
+            alert(`Se eliminó el usuario ${_id}`);
+            this.getList();
+          }
+          else alert(`Hubo un error al eliminar el usuario ${_id}`);
+        });
+    }
   }
 }
