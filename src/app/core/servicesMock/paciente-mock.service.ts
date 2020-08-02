@@ -1,26 +1,26 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
+import { PacienteServiceI } from '../servicesI/paciente.serviceI';
 import { Paciente } from '../../shared/models/paciente';
 import { PACIENTE } from '../mocks/paciente-template.mock';
 
 @Injectable()
-export class PacienteService {
-  listPaciente: Paciente[] = [];
+export class PacienteMockService extends PacienteServiceI {
+  private listPaciente: Paciente[] = [];
 
   constructor() {
+    super();
     for (let i: number = 0; i < 5; i++) this.listPaciente.push(this.next());
   }
 
-  getAll(): Observable<Paciente[]> {
-    return of(this.listPaciente);
-  }
+  public getAll = function(): Observable<Paciente[]> { return of(this.listPaciente); }
 
-  create(paciente: Paciente): void {
-    this.listPaciente.push(paciente);
-  }
+  public create = function(paciente: Paciente): void { this.listPaciente.push(paciente); }
 
-  new(id: string): Paciente {
+  public next = function(): Paciente { return this.new(this.listPaciente.length.toString()); }
+  
+  private new(id: string): Paciente {
     return {
       _id: PACIENTE._id.replace('{id}', id),
       nombres: PACIENTE.nombres.replace('{id}', id),
@@ -32,6 +32,4 @@ export class PacienteService {
       psicologoId: null
     };
   }
-
-  next(): Paciente { return this.new(this.listPaciente.length.toString()); }
 }

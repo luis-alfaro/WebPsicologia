@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { PacienteServiceI } from '../../../core/servicesI/paciente.serviceI';
 import { Paciente } from '../../../shared/models/paciente';
-import { PacienteService } from '../../../core/services/paciente.service';
 
 @Component({
   selector: 'app-public-contactanos',
@@ -11,7 +11,7 @@ import { PacienteService } from '../../../core/services/paciente.service';
 export class ContactanosComponent implements OnInit {
   paciente: Paciente;
 
-  constructor(private pacienteService: PacienteService) { }
+  constructor(private pacienteService: PacienteServiceI) { }
 
   ngOnInit() {
   }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from '../../../core/services/usuario.service';
 
+import { UsuarioServiceI } from '../../../core/servicesI/usuario.serviceI';
 import { Usuario } from '../../../shared/models/usuario';
 
 @Component({
@@ -11,7 +11,7 @@ import { Usuario } from '../../../shared/models/usuario';
 export class UsuarioListComponent implements OnInit {
   listUsuario: Usuario[];
 
-  constructor(private usuarioService:UsuarioService) { }
+  constructor(private usuarioService: UsuarioServiceI) { }
 
   ngOnInit() { this.getList(); }
 

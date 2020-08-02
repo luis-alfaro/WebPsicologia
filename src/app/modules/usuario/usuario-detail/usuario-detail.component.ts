@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { UsuarioService } from '../../../core/services/usuario.service';
+import { UsuarioServiceI } from '../../../core/servicesI/usuario.serviceI';
 import { Usuario } from '../../../shared/models/usuario';
 
 @Component({
@@ -16,7 +16,7 @@ export class UsuarioDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private location: Location,
-    private usuarioService: UsuarioService
+    private usuarioService: UsuarioServiceI
   ) { }
 
   ngOnInit() { this.getEntity(); }
