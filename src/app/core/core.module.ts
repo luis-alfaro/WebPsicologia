@@ -12,7 +12,7 @@ import { PacienteMockService } from './servicesMock/paciente-mock.service';
 @NgModule({
   imports: [ SharedModule ],
   providers: [
-    { provide: ConfigService, useFactory: ConfigFactory },
+    //{ provide: ConfigService, useFactory: ConfigFactory },
     { provide: UsuarioServiceI, useFactory: UsuarioFactory },
     { provide: PacienteServiceI, useClass: PacienteMockService },
   ]
