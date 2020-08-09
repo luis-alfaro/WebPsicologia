@@ -25,10 +25,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [
-              "src/config.js",
-              "src/assets/javascript/config.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -77,10 +74,7 @@
             "styles": [
               "styles.css"
             ],            
-            "scripts": [
-              "src/config.js",
-              "src/assets/javascript/config.js"
-            ],
+            "scripts": [],
             "assets": [
               "src/favicon.ico",
               "src/assets"
