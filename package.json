@@ -1,8 +1,9 @@
 {
-  "name": "angular",
+  "name": "lead-first-app",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "express": "^4.17.1",
     "@angular/animations": "^10.0.1",
     "@angular/common": "^10.0.1",
     "@angular/compiler": "^10.0.1",
